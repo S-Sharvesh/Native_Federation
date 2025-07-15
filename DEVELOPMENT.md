@@ -3,6 +3,7 @@
 ## 🛠️ Development Environment Setup
 
 ### Quick Start
+
 ```bash
 # Install all dependencies
 npm run install:all
@@ -32,17 +33,20 @@ graph TD
 **Creating a New Remote Module:**
 
 1. Navigate to the remote application:
+
    ```bash
    cd remote/src/app
    ```
 
 2. Create your module structure:
+
    ```bash
    ng generate module feature-name
    ng generate component feature-name/feature-component
    ```
 
 3. Export the module in `federation.config.js`:
+
    ```javascript
    exposes: {
      './remoteModule': './src/app/remote-main/remote-main.module.ts',
@@ -69,11 +73,12 @@ graph TD
 **Adding New Shared Dependencies:**
 
 1. Install the dependency in both applications:
+
    ```bash
    # In remote
    cd remote && npm install <package-name>
-   
-   # In shell  
+
+   # In shell
    cd shell && npm install <package-name>
    ```
 
@@ -88,11 +93,12 @@ graph TD
 ## 🧪 Testing Strategy
 
 ### Unit Testing
+
 ```bash
 # Test remote application
 npm run test:remote
 
-# Test shell application  
+# Test shell application
 npm run test:shell
 
 # Test both
@@ -100,12 +106,14 @@ npm run test:all
 ```
 
 ### Integration Testing
+
 1. Start both applications
 2. Navigate through all federated routes
 3. Verify module loading and communication
 4. Test error scenarios
 
 ### E2E Testing
+
 ```bash
 # Add E2E tests for the complete user journey
 cd shell
@@ -115,22 +123,25 @@ ng e2e
 ## 🔧 Build and Deployment
 
 ### Development Build
+
 ```bash
 npm run build:all
 ```
 
 ### Production Build
+
 ```bash
 # Build remote first
 cd remote
 npm run build --prod
 
 # Build shell
-cd shell  
+cd shell
 npm run build --prod
 ```
 
 ### Deployment Strategy
+
 1. Deploy remote application first
 2. Update federation manifest URLs
 3. Deploy shell application
@@ -139,19 +150,21 @@ npm run build --prod
 ## 📊 Performance Monitoring
 
 ### Bundle Analysis
+
 ```bash
 # Analyze remote bundle
 cd remote
 npm run build -- --stats-json
 npx webpack-bundle-analyzer dist/remote/stats.json
 
-# Analyze shell bundle  
+# Analyze shell bundle
 cd shell
 npm run build -- --stats-json
 npx webpack-bundle-analyzer dist/shell/stats.json
 ```
 
 ### Performance Checks
+
 - Monitor bundle sizes
 - Check for duplicate dependencies
 - Verify lazy loading performance
@@ -160,6 +173,7 @@ npx webpack-bundle-analyzer dist/shell/stats.json
 ## 🐛 Debugging
 
 ### Common Debug Commands
+
 ```bash
 # Clear all caches
 npm run clean
@@ -173,7 +187,9 @@ npm run clean && npm run install:all
 ```
 
 ### Debug Mode
+
 1. Start applications in debug mode:
+
    ```bash
    cd remote && ng serve --source-map
    cd shell && ng serve --source-map
@@ -187,11 +203,13 @@ npm run clean && npm run install:all
 ## 📋 Code Standards
 
 ### Naming Conventions
+
 - **Remote Modules**: Use descriptive names (`./userManagement`, `./productCatalog`)
 - **Components**: Follow Angular naming conventions (`feature-name.component.ts`)
 - **Services**: End with `Service` (`user-data.service.ts`)
 
 ### File Organization
+
 ```
 remote/src/app/
 ├── shared/              # Shared utilities
@@ -203,6 +221,7 @@ remote/src/app/
 ```
 
 ### Git Workflow
+
 ```bash
 # Feature development
 git checkout -b feature/new-remote-module
@@ -216,11 +235,13 @@ git push origin feature/new-remote-module
 ## 🔐 Security Considerations
 
 ### Content Security Policy
+
 - Configure CSP headers for federated modules
 - Validate remote entry points
 - Use HTTPS in production
 
 ### Module Validation
+
 - Verify module signatures
 - Implement runtime security checks
 - Monitor for unauthorized modules

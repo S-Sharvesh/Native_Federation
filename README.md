@@ -5,6 +5,7 @@ A modern Angular microfrontend architecture demonstration using Angular Native F
 ## 🏗️ Architecture Overview
 
 This project demonstrates a microfrontend architecture with two main applications:
+
 - **Shell Application**: The host application that orchestrates and loads remote modules
 - **Remote Application**: A standalone micro-application that exposes modules to be consumed by the shell
 
@@ -16,7 +17,7 @@ graph TB
     D --> E[Exposed Module<br/>remoteModule]
     E --> F[Home Component]
     E --> G[Services & Models]
-    
+
     style A fill:#e1f5fe
     style D fill:#f3e5f5
     style E fill:#e8f5e8
@@ -30,7 +31,7 @@ sequenceDiagram
     participant S as Shell App
     participant F as Federation
     participant R as Remote App
-    
+
     U->>S: Navigate to route
     S->>F: Request remote module
     F->>R: Load exposed module
@@ -95,17 +96,19 @@ npm install -g @angular/cli
 ### Installation & Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd angular-mf-native-federation
    ```
 
 2. **Install dependencies for both applications**
+
    ```bash
    # Install shell dependencies
    cd shell
    npm install
-   
+
    # Install remote dependencies
    cd ../remote
    npm install
@@ -116,10 +119,12 @@ npm install -g @angular/cli
 **Important**: Start the remote application first, then the shell application.
 
 1. **Start the Remote Application** (Terminal 1)
+
    ```bash
    cd remote
    npm start
    ```
+
    > Remote app will be available at: http://localhost:4201
 
 2. **Start the Shell Application** (Terminal 2)
@@ -142,7 +147,7 @@ graph LR
     B --> C[Develop Shell]
     C --> D[Test Integration]
     D --> E[Build & Deploy]
-    
+
     style A fill:#ffeb3b
     style C fill:#4caf50
     style E fill:#2196f3
@@ -151,6 +156,7 @@ graph LR
 ### Building for Production
 
 1. **Build Remote Application**
+
    ```bash
    cd remote
    npm run build
@@ -167,24 +173,26 @@ graph LR
 ### Federation Configuration
 
 **Remote App** (`remote/federation.config.js`):
+
 ```javascript
 module.exports = withNativeFederation({
-  name: 'remote',
+  name: "remote",
   exposes: {
-    './remoteModule': './src/app/remote-main/remote-main.module.ts'
+    "./remoteModule": "./src/app/remote-main/remote-main.module.ts",
   },
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true })
-  }
+    ...shareAll({ singleton: true, strictVersion: true }),
+  },
 });
 ```
 
 **Shell App** (`shell/federation.config.js`):
+
 ```javascript
 module.exports = withNativeFederation({
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true })
-  }
+    ...shareAll({ singleton: true, strictVersion: true }),
+  },
 });
 ```
 
@@ -202,12 +210,12 @@ cd remote && npm test
 
 ## 📦 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm start` | Start development server |
-| `npm run build` | Build for production |
-| `npm test` | Run unit tests |
-| `npm run watch` | Build in watch mode |
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm start`     | Start development server |
+| `npm run build` | Build for production     |
+| `npm test`      | Run unit tests           |
+| `npm run watch` | Build in watch mode      |
 
 ## 🔍 Key Features
 
@@ -223,11 +231,13 @@ cd remote && npm test
 ### Common Issues
 
 1. **Remote module not loading**
+
    - Ensure remote app is running before shell app
    - Check federation.manifest.json configuration
    - Verify exposed module paths
 
 2. **Port conflicts**
+
    - Shell app: Port 4200
    - Remote app: Port 4201
    - Change ports in angular.json if needed
@@ -253,99 +263,112 @@ This project is for demonstration purposes. Please refer to individual package l
 **Happy Coding! 🚀**
 
 Add native federation into the remote application - define project, port (in our case **remote**)
+
 ```
 ng add @angular-architects/native-federation --project remote --port 4201 --type remote
 ```
-Schematics will create *federation.config.js* which we need to update like this:
+
+Schematics will create _federation.config.js_ which we need to update like this:
 
 ```javascript
-const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
+const {
+  withNativeFederation,
+  shareAll,
+} = require("@angular-architects/native-federation/config");
 
 module.exports = withNativeFederation({
-
   /// edit this name - it should be specific for each remote application
-  name: 'remote',
+  name: "remote",
 
   /// define key and path to the remote remote module (it should be different of app.module.ts)
   exposes: {
-    './remoteModule': './src/app/remote-main/remote-main.module.ts'
+    "./remoteModule": "./src/app/remote-main/remote-main.module.ts",
   },
 
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    ...shareAll({
+      singleton: true,
+      strictVersion: true,
+      requiredVersion: "auto",
+    }),
   },
 
   skip: [
-    'rxjs/ajax',
-    'rxjs/fetch',
-    'rxjs/testing',
-    'rxjs/webSocket',
+    "rxjs/ajax",
+    "rxjs/fetch",
+    "rxjs/testing",
+    "rxjs/webSocket",
     // Add further packages you don't need at runtime
-  ]
-  
+  ],
 });
 ```
 
-
 ## shell project
+
 Create the shell application
+
 ```
 ng new shell --standalone false
 ```
 
 Add native federation into the remote application - define project, port (in our case **shell**)
+
 ```
 ng add @angular-architects/native-federation --project shell --port 4200 --type dynamic-host
 ```
 
 In the assets edit federation.manifest.json
+
 ```json
 {
-	"remote": "http://localhost:4201/remoteEntry.json"
+  "remote": "http://localhost:4201/remoteEntry.json"
 }
 ```
 
-Schematics will create also *federation.config.js* which we are going to let as is.
-Also schematics will change **main.ts** which is now initializing Federation 
+Schematics will create also _federation.config.js_ which we are going to let as is.
+Also schematics will change **main.ts** which is now initializing Federation
 
 ```typescript
-import { initFederation } from '@angular-architects/native-federation';
+import { initFederation } from "@angular-architects/native-federation";
 
-initFederation('/assets/federation.manifest.json')
-  .catch(err => console.error(err))
-  .then(_ => import('./bootstrap'))
-  .catch(err => console.error(err));
+initFederation("/assets/federation.manifest.json")
+  .catch((err) => console.error(err))
+  .then((_) => import("./bootstrap"))
+  .catch((err) => console.error(err));
 ```
 
 Last step is to edit routing in router module to define async route to remote application:
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeShellComponent } from './home-shell/home-shell.component';
-import { loadRemoteModule } from '@angular-architects/native-federation';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { HomeShellComponent } from "./home-shell/home-shell.component";
+import { loadRemoteModule } from "@angular-architects/native-federation";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: HomeShellComponent,
-    pathMatch: 'full',
+    pathMatch: "full",
   },
   {
     /// this is our remote application route
-    path: 'remote',
+    path: "remote",
     loadChildren: () =>
-      loadRemoteModule('remote', './remoteModule').then((m) => m.RemoteMainModule)
+      loadRemoteModule("remote", "./remoteModule").then(
+        (m) => m.RemoteMainModule
+      ),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 ```
 
 ## Issues
+
 Don't forget to setup remote module (entry point in remote app for shell) exactly as is app.module.ts.
 This is because we need to register services (in providers, add HttpClientModule and others to support functionality)
