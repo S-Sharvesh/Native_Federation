@@ -1,6 +1,28 @@
-<ul>
-  <li><a routerLinkActive="active" routerLink="/">Domov</a></li>
-  <li><a routerLink="/remote">Remote application</a></li>
-</ul>
+<div class="app-container">
+  <!-- Modern Navigation Header -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <h2>🚀 Micro-Frontend Hub</h2>
+    </div>
+    <nav class="nav-menu">
+      <a routerLinkActive="active" routerLink="/" class="nav-link">
+        <i class="icon">🏠</i>
+        Home
+      </a>
+      <a routerLink="/remote" class="nav-link">
+        <i class="icon">🎯</i>
+        Remote App
+      </a>
+    </nav>
+  </header>
 
-<router-outlet></router-outlet>
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Angular Micro-Frontend Demo | Native Federation</p>
+  </footer>
+</div>

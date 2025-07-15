@@ -1,0 +1,47 @@
+{
+  "name": "angular-mf-native-federation",
+  "version": "1.0.0",
+  "description": "Angular Microfrontend architecture using Native Federation",
+  "scripts": {
+    "start": "./start.sh",
+    "install:all": "npm run install:remote && npm run install:shell",
+    "install:remote": "cd remote && npm install",
+    "install:shell": "cd shell && npm install",
+    "build:all": "npm run build:remote && npm run build:shell",
+    "build:remote": "cd remote && npm run build",
+    "build:shell": "cd shell && npm run build",
+    "test:all": "npm run test:remote && npm run test:shell",
+    "test:remote": "cd remote && npm test",
+    "test:shell": "cd shell && npm test",
+    "clean": "npm run clean:remote && npm run clean:shell",
+    "clean:remote": "cd remote && rm -rf node_modules dist",
+    "clean:shell": "cd shell && rm -rf node_modules dist",
+    "lint:all": "npm run lint:remote && npm run lint:shell",
+    "lint:remote": "cd remote && ng lint",
+    "lint:shell": "cd shell && ng lint"
+  },
+  "keywords": [
+    "angular",
+    "microfrontend",
+    "native-federation",
+    "module-federation",
+    "micro-frontend"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/angular-mf-native-federation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/angular-mf-native-federation/issues"
+  },
+  "homepage": "https://github.com/yourusername/angular-mf-native-federation#readme"
+}

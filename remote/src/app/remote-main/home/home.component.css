@@ -1,3 +1,238 @@
-.home-wrapper{
-    padding: 15px 15px;
+.remote-container {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.remote-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.remote-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #2c3e50;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #00b894;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Tech Tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Interactive Card */
+.demo-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin: 1rem 0;
+}
+
+.demo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.result-display {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  border-left: 4px solid #ff6b6b;
+}
+
+.result-label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-right: 0.5rem;
+}
+
+.result-value {
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
+/* Features List */
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.feature {
+  background: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .remote-container {
+    padding: 1rem;
+  }
+
+  .remote-header h1 {
+    font-size: 2rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-tags {
+    justify-content: center;
+  }
 }

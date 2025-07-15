@@ -1,0 +1,125 @@
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Stats Cards */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+  margin: 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.stat-card p {
+  color: #666;
+  margin: 0;
+}
+
+/* Features Section */
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature-item {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .features-section {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+}

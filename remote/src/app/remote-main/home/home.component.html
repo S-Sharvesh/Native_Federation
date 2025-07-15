@@ -1,10 +1,77 @@
-<div class="home-wrapper">
-  This is content of separated <strong>remote</strong> application running on
-  port 4201
-  <p>New content 123 - REMOTE</p>
+<div class="remote-container">
+  <!-- Header Section -->
+  <div class="remote-header">
+    <h1>🎯 Remote Micro-Frontend</h1>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      Running on Port 4201
+    </div>
+  </div>
+
+  <!-- Main Content Cards -->
+  <div class="content-grid">
+    <div class="card feature-card">
+      <div class="card-icon">🚀</div>
+      <h2>Independent Application</h2>
+      <p>
+        This is a completely separate Angular application that's loaded
+        dynamically into the shell application using Native Federation.
+      </p>
+      <div class="tech-tags">
+        <span class="tag">Angular 17</span>
+        <span class="tag">Native Federation</span>
+        <span class="tag">TypeScript</span>
+      </div>
+    </div>
+
+    <div class="card interactive-card">
+      <div class="card-icon">⚡</div>
+      <h2>Interactive Demo</h2>
+      <p>Click the button below to test the interactive functionality:</p>
+
+      <button (click)="printValue()" class="btn demo-btn">
+        <span class="btn-icon">🎮</span>
+        Test Interaction
+      </button>
+
+      <div class="result-display" *ngIf="btnValue">
+        <span class="result-label">Result:</span>
+        <span class="result-value">{{ btnValue }}</span>
+      </div>
+    </div>
+
+    <div class="card info-card">
+      <div class="card-icon">🎨</div>
+      <h2>Modern UI Design</h2>
+      <p>
+        This micro-frontend features a modern, responsive design with gradient
+        backgrounds, smooth animations, and glassmorphism effects.
+      </p>
+      <div class="features-list">
+        <div class="feature">✨ Smooth Animations</div>
+        <div class="feature">🎨 Modern Gradients</div>
+        <div class="feature">📱 Responsive Design</div>
+        <div class="feature">🔮 Glassmorphism</div>
+      </div>
+    </div>
+
+    <div class="card stats-card">
+      <div class="card-icon">📊</div>
+      <h2>Performance Stats</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-number">< 1s</span>
+          <span class="stat-label">Load Time</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Uptime</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Dependencies</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<button (click)="printValue()">PRINT VALUE</button>
-{{ this.btnValue }}
-
-<p>test 123</p>
