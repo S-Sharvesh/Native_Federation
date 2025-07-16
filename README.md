@@ -2,13 +2,9 @@
 
 A cutting-edge Angular microfrontend architecture demonstrating advanced Native Federation capabilities with real-time load tracking and modern black & white UI design.
 
-## Architecture Overvi## 📄 License
+## Architecture Overview
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Happy Coding! 🚀**ject demonstrates a microfrontend architecture with two main applications:
+This project demonstrates a microfrontend architecture with two main applications:
 
 - **Shell Application**: The host application that orchestrates and loads remote modules
 - **Remote Application**: A standalone micro-application that exposes modules to be consumed by the shell
@@ -44,7 +40,7 @@ sequenceDiagram
     S->>U: Render component
 ```
 
-##  Project Structure
+## Project Structure
 
 ```
 Native_Federation/
@@ -77,7 +73,7 @@ Native_Federation/
 └── .gitignore
 ```
 
-##  Technology Stack
+## Technology Stack
 
 - **Angular**: v17.0.0
 - **Native Federation**: v17.0.7
@@ -85,7 +81,7 @@ Native_Federation/
 - **RxJS**: v7.8.0
 - **ES Module Shims**: v1.5.12
 
-##  Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -138,12 +134,12 @@ npm install -g @angular/cli
    ```
    > Shell app will be available at: http://localhost:4200
 
-###  Access the Application
+### Access the Application
 
 - **Main Application**: http://localhost:4200
 - **Remote Application**: http://localhost:4201 (standalone)
 
-##  Development Workflow
+## Development Workflow
 
 ```mermaid
 graph LR
@@ -172,7 +168,7 @@ graph LR
    npm run build
    ```
 
-##  Configuration Details
+## Configuration Details
 
 ### Federation Configuration
 
@@ -200,7 +196,7 @@ module.exports = withNativeFederation({
 });
 ```
 
-##  Testing
+## Testing
 
 Run tests for each application:
 
@@ -212,7 +208,7 @@ cd shell && npm test
 cd remote && npm test
 ```
 
-##  Available Scripts
+## Available Scripts
 
 | Command         | Description              |
 | --------------- | ------------------------ |
@@ -221,7 +217,7 @@ cd remote && npm test
 | `npm test`      | Run unit tests           |
 | `npm run watch` | Build in watch mode      |
 
-## 🔍 Key Features
+## Key Features
 
 - **Module Federation**: Seamless integration between shell and remote apps
 - **Lazy Loading**: Remote modules loaded on demand
@@ -254,15 +250,10 @@ cd remote && npm test
 
 Feel free to fork and explore the microfrontend architecture! Contributions are welcome.
 
-##  License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-<<<<<<< HEAD
-=======
-Created by **Sharvesh S**
-
->>>>>>> 1002e64a56bd889f8e8849ea725bd9f00a3e87f0
 ---
 
 **Happy Coding!**
