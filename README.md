@@ -2,7 +2,7 @@
 
 A cutting-edge Angular microfrontend architecture built from scratch by Sharvesh S, demonstrating advanced Native Federation capabilities with real-time load tracking and modern black & white UI design.
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 This project demonstrates a microfrontend architecture with two main applications:
 
@@ -23,7 +23,7 @@ graph TB
     style E fill:#e8f5e8
 ```
 
-## 🔄 Communication Flow
+## Communication Flow
 
 ```mermaid
 sequenceDiagram
@@ -40,11 +40,11 @@ sequenceDiagram
     S->>U: Render component
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Native_Federation/
-├── 📦 shell/                          # Host Application (Port: 4200)
+├──  shell/                          # Host Application (Port: 4200)
 │   ├── src/
 │   │   ├── app/
 │   │   │   ├── app-routing.module.ts   # Routes configuration
@@ -55,7 +55,7 @@ Native_Federation/
 │   ├── federation.config.js            # Native federation config
 │   └── package.json
 │
-├── 📦 remote/                          # Remote Application (Port: 4201)
+├──  remote/                          # Remote Application (Port: 4201)
 │   ├── src/
 │   │   ├── app/
 │   │   │   ├── app.module.ts
@@ -73,7 +73,7 @@ Native_Federation/
 └── .gitignore
 ```
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Angular**: v17.0.0
 - **Native Federation**: v17.0.7
@@ -81,7 +81,7 @@ Native_Federation/
 - **RxJS**: v7.8.0
 - **ES Module Shims**: v1.5.12
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -114,7 +114,7 @@ npm install -g @angular/cli
    npm install
    ```
 
-### 🏃‍♂️ Running the Applications
+### Running the Applications
 
 **Important**: Start the remote application first, then the shell application.
 
@@ -134,12 +134,12 @@ npm install -g @angular/cli
    ```
    > Shell app will be available at: http://localhost:4200
 
-### 🌐 Access the Application
+###  Access the Application
 
 - **Main Application**: http://localhost:4200
 - **Remote Application**: http://localhost:4201 (standalone)
 
-## 🔧 Development Workflow
+##  Development Workflow
 
 ```mermaid
 graph LR
@@ -168,7 +168,7 @@ graph LR
    npm run build
    ```
 
-## 📋 Configuration Details
+##  Configuration Details
 
 ### Federation Configuration
 
@@ -196,7 +196,7 @@ module.exports = withNativeFederation({
 });
 ```
 
-## 🧪 Testing
+##  Testing
 
 Run tests for each application:
 
@@ -208,7 +208,7 @@ cd shell && npm test
 cd remote && npm test
 ```
 
-## 📦 Available Scripts
+##  Available Scripts
 
 | Command         | Description              |
 | --------------- | ------------------------ |
@@ -219,14 +219,14 @@ cd remote && npm test
 
 ## 🔍 Key Features
 
-- ✅ **Module Federation**: Seamless integration between shell and remote apps
-- ✅ **Lazy Loading**: Remote modules loaded on demand
-- ✅ **Shared Dependencies**: Optimized bundle sharing
-- ✅ **Independent Development**: Teams can work independently
-- ✅ **Runtime Integration**: Modules integrated at runtime
-- ✅ **Scalable Architecture**: Easy to add new micro-frontends
+- **Module Federation**: Seamless integration between shell and remote apps
+- **Lazy Loading**: Remote modules loaded on demand
+- **Shared Dependencies**: Optimized bundle sharing
+- **Independent Development**: Teams can work independently
+- **Runtime Integration**: Modules integrated at runtime
+- **Scalable Architecture**: Easy to add new micro-frontends
 
-## 🚧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -246,19 +246,19 @@ cd remote && npm test
    - Ensure both apps are running on localhost
    - Check browser console for federation errors
 
-## 🤝 Contributing
+## Contributing
 
 This project is created and maintained by Sharvesh S. Feel free to fork and explore the microfrontend architecture!
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Created with ❤️ by **Sharvesh S**
+Created by **Sharvesh S**
 
 ---
 
-**Happy Coding! 🚀**
+**Happy Coding!**
 
 Add native federation into the remote application - define project, port (in our case **remote**)
 
