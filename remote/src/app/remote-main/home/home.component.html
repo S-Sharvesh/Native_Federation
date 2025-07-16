@@ -60,17 +60,27 @@
       <h2>Performance Stats</h2>
       <div class="stats-grid">
         <div class="stat">
-          <span class="stat-number">< 1s</span>
-          <span class="stat-label">Load Time</span>
+          <span class="stat-number" *ngIf="!isLoaded" class="loading">...</span>
+          <span class="stat-number load-time" *ngIf="isLoaded">{{
+            getFormattedLoadTime()
+          }}</span>
+          <span class="stat-label">Exact Load Time</span>
         </div>
         <div class="stat">
           <span class="stat-number">100%</span>
           <span class="stat-label">Uptime</span>
         </div>
         <div class="stat">
-          <span class="stat-number">0</span>
-          <span class="stat-label">Dependencies</span>
+          <span class="stat-number current-time">{{ getCurrentTime() }}</span>
+          <span class="stat-label">Current Time</span>
         </div>
+      </div>
+      <div class="load-time-details" *ngIf="isLoaded">
+        <p>
+          <strong>🚀 Remote Module Load Time:</strong>
+          {{ getFormattedLoadTime() }}
+        </p>
+        <p><strong>🕒 Loaded at:</strong> {{ getCurrentTime() }}</p>
       </div>
     </div>
   </div>

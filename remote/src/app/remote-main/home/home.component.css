@@ -14,7 +14,7 @@
 .remote-header h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(45deg, #ffffff, #cccccc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -24,18 +24,19 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
   padding: 0.5rem 1rem;
   border-radius: 25px;
   font-weight: 600;
-  color: #2c3e50;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #e0e0e0;
 }
 
 .status-dot {
   width: 10px;
   height: 10px;
-  background: #00b894;
+  background: #00ff00;
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -61,15 +62,16 @@
 
 /* Card Styles */
 .card {
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid #e0e0e0;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  color: #000000;
 }
 
 .card::before {
@@ -79,12 +81,13 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(45deg, #000000, #333333);
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: #000000;
 }
 
 .card-icon {
@@ -94,13 +97,13 @@
 }
 
 .card h2 {
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
 .card p {
-  color: #666;
+  color: #333333;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -114,19 +117,20 @@
 }
 
 .tag {
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(45deg, #000000, #333333);
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid #666666;
 }
 
 /* Interactive Card */
 .demo-btn {
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(45deg, #000000, #333333);
   color: white;
-  border: none;
+  border: 2px solid #ffffff;
   padding: 1rem 2rem;
   border-radius: 25px;
   cursor: pointer;
@@ -141,7 +145,9 @@
 
 .demo-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(45deg, #333333, #000000);
+  border-color: #cccccc;
 }
 
 .btn-icon {
@@ -153,17 +159,18 @@
   padding: 1rem;
   border-radius: 10px;
   margin-top: 1rem;
-  border-left: 4px solid #ff6b6b;
+  border-left: 4px solid #000000;
+  border: 2px solid #e0e0e0;
 }
 
 .result-label {
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
   margin-right: 0.5rem;
 }
 
 .result-value {
-  color: #ff6b6b;
+  color: #333333;
   font-weight: 700;
 }
 
@@ -203,15 +210,49 @@
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ff6b6b;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   font-size: 0.8rem;
-  color: #666;
+  color: #333333;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Load Time Specific Styles */
+.loading {
+  color: #ffcc00 !important;
+  font-style: italic;
+  animation: pulse 1.5s infinite;
+}
+
+.load-time {
+  color: #00ff00 !important;
+  font-weight: 700;
+}
+
+.current-time {
+  color: #000000 !important;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.load-time-details {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  border-left: 4px solid #00ff00;
+  border: 2px solid #e0e0e0;
+}
+
+.load-time-details p {
+  margin: 0.5rem 0;
+  color: #000000;
+  font-size: 0.9rem;
 }
 
 /* Responsive Design */

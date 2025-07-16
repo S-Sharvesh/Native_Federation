@@ -4,6 +4,18 @@
     <p class="hero-description">
       This is the main shell application running on <strong>port 4200</strong>
     </p>
+    <div class="load-time-banner" *ngIf="isLoaded">
+      <p>
+        <strong
+          >🚀 Shell Application Load Time: {{ getFormattedLoadTime() }}</strong
+        >
+      </p>
+      <p>
+        <small
+          >Measured from component instantiation to full initialization</small
+        >
+      </p>
+    </div>
     <div class="hero-stats">
       <div class="stat-card">
         <span class="stat-icon">🚀</span>
@@ -17,8 +29,14 @@
       </div>
       <div class="stat-card">
         <span class="stat-icon">⚡</span>
-        <h3>Hot Reload</h3>
-        <p>Live Updates</p>
+        <h3>Load Time</h3>
+        <p *ngIf="!isLoaded" class="loading">Calculating...</p>
+        <p *ngIf="isLoaded" class="load-time">{{ getFormattedLoadTime() }}</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🕒</span>
+        <h3>Current Time</h3>
+        <p class="current-time">{{ getCurrentTime() }}</p>
       </div>
     </div>
   </div>
