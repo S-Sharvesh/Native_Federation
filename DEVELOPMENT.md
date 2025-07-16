@@ -1,6 +1,6 @@
 # Development Guide
 
-**Native Federation Project by Sharvesh S**
+**Native Federation Project**
 
 This comprehensive development guide covers the advanced micro-frontend architecture implementation.
 
