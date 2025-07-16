@@ -1,7 +1,7 @@
 {
-  "name": "angular-mf-native-federation",
+  "name": "native-federation",
   "version": "1.0.0",
-  "description": "Angular Microfrontend architecture using Native Federation",
+  "description": "Advanced Angular Microfrontend architecture using Native Federation by Sharvesh S",
   "scripts": {
     "start": "./start.sh",
     "install:all": "npm run install:remote && npm run install:shell",
@@ -27,7 +27,7 @@
     "module-federation",
     "micro-frontend"
   ],
-  "author": "Your Name",
+  "author": "Sharvesh S",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
@@ -38,10 +38,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/angular-mf-native-federation.git"
+    "url": "git+https://github.com/S-Sharvesh/Native_Federation.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/angular-mf-native-federation/issues"
+    "url": "https://github.com/S-Sharvesh/Native_Federation/issues"
   },
-  "homepage": "https://github.com/yourusername/angular-mf-native-federation#readme"
+  "homepage": "https://github.com/S-Sharvesh/Native_Federation#readme"
 }

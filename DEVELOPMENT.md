@@ -1,6 +1,8 @@
 # Development Guide
 
-## 🛠️ Development Environment Setup
+**Native Federation Project by Sharvesh S**
+
+This comprehensive development guide covers the advanced micro-frontend architecture implementation.
 
 ### Quick Start
 

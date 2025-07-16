@@ -1,6 +1,6 @@
-# Angular Microfrontend with Native Federation
+# Native Federation - Advanced Micro-Frontend Architecture
 
-A modern Angular microfrontend architecture demonstration using Angular Native Federation, showcasing how to build scalable, distributed frontend applications.
+A cutting-edge Angular microfrontend architecture built from scratch by Sharvesh S, demonstrating advanced Native Federation capabilities with real-time load tracking and modern black & white UI design.
 
 ## 🏗️ Architecture Overview
 
@@ -43,7 +43,7 @@ sequenceDiagram
 ## 📁 Project Structure
 
 ```
-angular-mf-native-federation/
+Native_Federation/
 ├── 📦 shell/                          # Host Application (Port: 4200)
 │   ├── src/
 │   │   ├── app/
@@ -98,8 +98,8 @@ npm install -g @angular/cli
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
-   cd angular-mf-native-federation
+   git clone https://github.com/S-Sharvesh/Native_Federation.git
+   cd Native_Federation
    ```
 
 2. **Install dependencies for both applications**
@@ -248,15 +248,13 @@ cd remote && npm test
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+This project is created and maintained by Sharvesh S. Feel free to fork and explore the microfrontend architecture!
 
 ## 📄 License
 
-This project is for demonstration purposes. Please refer to individual package licenses for dependencies.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Created with ❤️ by **Sharvesh S**
 
 ---
 
